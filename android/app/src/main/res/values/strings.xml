@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">isipl</string>
+    <string name="title_activity_main">isipl</string>
+    <string name="package_name">com.isipl.app</string>
+    <string name="custom_url_scheme">com.isipl.app</string>
+</resources>
