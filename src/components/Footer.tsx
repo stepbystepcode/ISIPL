@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { useNavigate } from 'react-router-dom';
 import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -10,7 +11,12 @@ export const Footer = () => {
         {name: '使用条款', href: '/terms'},
         {name: '支持', href: '/support'},
     ]
-
+    const navigate = useNavigate();
+    const socalList = [
+        {icon: faFacebook,href: 'https://www.facebook.com'},
+        {icon: faInstagram,href: 'https://www.instagram.com'},
+        {icon: faTwitter,href: 'https://x.com/home'},
+    ]
     return (
         <footer className="py-10 bg-black">
             <motion.div className="max-w-7xl mx-auto"
@@ -34,6 +40,7 @@ export const Footer = () => {
                             {navItems.map((item, index) => (
                                 <li key={index}>
                                     <button
+                                        onClick={()=>navigate(item.href)}
                                         className="text-sm text-white hover:text-sky-500 focus:text-sky-500  dark:hover:text-sky-500 dark:focus:text-sky-500">
                                         <div
                                         >{item.name}
@@ -44,12 +51,12 @@ export const Footer = () => {
                         </ul>
                         <div className="w-full h-px bg-white/20 dark:bg-white/10 md:w-px md:h-6"></div>
                         <ul className="flex items-center gap-8">
-                            {[faTwitter, faFacebook, faInstagram].map((icon, index) => (
-                                <li key={index}>
+                            {socalList.map((item, index) => (
+                                <li key={index} onClick={()=>window.location.href = item.href}>
                                 <button className="text-white">
                                     <div className=" text-lg  hover:text-sky-500 focus:text-sky-500 dark:hover:text-sky-500 dark:focus:text-sky-500">
 
-                                        <FontAwesomeIcon icon={icon}/></div>
+                                        <FontAwesomeIcon icon={item.icon}/></div>
                                 </button></li>))}
                         </ul>
                     </div>

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion"
-import {ArrowRight} from "lucide-react";
 import {faDiscord, faTiktok, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import Bg from './Bg';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 export const Banner = () => {
     return (
-        <div className="relative">
+        <div className="relative mt-16 lg:mt-36">
             <motion.div className="max-w-7xl mx-auto"
                          viewport={{ once: true }}
                          whileInView={{
@@ -35,7 +35,10 @@ export const Banner = () => {
                                 <button
                                     className="w-fit flex items-center gap-1 text-white whitespace-nowrap px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-600 group">
                                     <span>立即注册</span>
-                                    <ArrowRight/>
+                                    <div className="group-hover:translate-x-1 transition-all duration-300">
+
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    </div>
                                 </button>
                                 <div className="flex items-center gap-6">
                                     <div className="inline-flex -space-x-4 -ml-0.5">

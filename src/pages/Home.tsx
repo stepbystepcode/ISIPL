@@ -9,7 +9,7 @@ import {Footer} from "@/components/Footer.tsx";
 import { SafeArea } from 'capacitor-plugin-safe-area';
 import { StatusBar, Style } from '@capacitor/status-bar';
 import {useEffect} from "react";
-export default function Home() {
+export const Home = () => {
     useEffect(() => {
             (async function(){
                 const safeAreaData = await SafeArea.getSafeAreaInsets();

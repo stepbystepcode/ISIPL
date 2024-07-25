@@ -1,6 +1,7 @@
 import { Fade as Hamburger } from 'hamburger-react'
 import { motion } from "framer-motion"
 import {useState} from "react";
+import { Link } from "react-router-dom";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export const Header = () => {
@@ -20,14 +21,14 @@ export const Header = () => {
     ]
     const [isOpen, setOpen] = useState(false)
     return (
-        <header className="top-0 sticky z-40 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8">
+        <header className="fixed top-0 z-40 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8">
             <div className="w-full mx-auto max-w-7xl h-full hidden gap-5 md:grid md:grid-cols-[1fr_0.5fr_1fr] md:items-center">
                 <nav className="w-full h-full flex items-center justify-start">
                     {navItems.map((item, index) => (
                         <button
                             key={index}
                             className="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60">
-                            <div><a>{item.name}</a></div>
+                            <div><Link to={item.url}>{item.name}</Link></div>
                         </button>
                     ))}
                 </nav>
@@ -35,9 +36,13 @@ export const Header = () => {
                     <img className="w-auto h-10 object-cover" src="/logo.png" alt="LOGO"/>
                 </div>
                 <div className="w-full h-full flex items-center justify-end">
-                    <button className="BTN-PRIMARY w-fit h-10 px-5 group text-sm whitespace-nowrap font-semibold text-white flex gap-2 items-center rounded-full bg-blue-500 hover:bg-blue-600 hover:transition-all hover:duration-300">
+                    <button
+                        className="BTN-PRIMARY w-fit h-10 px-5 group text-sm whitespace-nowrap font-semibold text-white flex gap-2 items-center rounded-full bg-blue-500 hover:bg-blue-600 hover:transition-all hover:duration-300">
                         <span>联系我们</span>
-                        <FontAwesomeIcon icon={faArrowRight} />
+                        <div className="group-hover:translate-x-1 transition-all duration-300">
+
+                            <FontAwesomeIcon icon={faArrowRight}/>
+                        </div>
                     </button>
                 </div>
             </div>
