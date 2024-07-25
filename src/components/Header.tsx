@@ -20,7 +20,7 @@ export const Header = () => {
     ]
     const [isOpen, setOpen] = useState(false)
     return (
-        <header className="sticky top-0 z-40 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8">
+        <header className="top-0 sticky z-40 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8">
             <div className="w-full mx-auto max-w-7xl h-full hidden gap-5 md:grid md:grid-cols-[1fr_0.5fr_1fr] md:items-center">
                 <nav className="w-full h-full flex items-center justify-start">
                     {navItems.map((item, index) => (
