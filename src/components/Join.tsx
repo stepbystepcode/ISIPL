@@ -13,11 +13,11 @@ export const Join = () => {
                             Genius Tracker
                         </div>
                     </h2>
-                    <p className="DESC mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300/90">
+                    <div className="DESC mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300/90">
                         <div 
                            >注册并体验我们的个性化学习评价与反馈系统，助力学生全面发展。
                         </div>
-                    </p>
+                    </div>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <button
                             className=" flex items-center justify-center text-white bg-sky-500 font-medium border-0 py-2 xl:py-3 px-6 focus:outline-none hover:bg-sky-400 rounded-lg text-sm sm:text-base 2xl:text-lg transition-colors duration-500">

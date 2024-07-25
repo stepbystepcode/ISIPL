@@ -20,11 +20,11 @@ export const Evaluate = () => {
                         <h2 className=" text-5xl font-semibold text-slate-900 dark:text-white">
                             <div>用户评价</div>
                         </h2>
-                        <p className=" text-base font-normal text-slate-600 dark:text-white/70">
+                        <div className=" text-base font-normal text-slate-600 dark:text-white/70">
                             <div>来自学生和教师的真实反馈，见证Edu
                                 Genius Tracker的卓越表现。
                             </div>
-                        </p>
+                        </div>
                     </div>
                 </motion.div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -51,15 +51,15 @@ export const Evaluate = () => {
                                 <div className="absolute bottom-0 left-0 w-full px-6 py-5">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-base font-semibold text-white">
+                                            <div className="text-base font-semibold text-white">
                                                 <div
                                                 >{item.name}
                                                 </div>
-                                            </p>
-                                            <p className=" mt-1 text-sm font-normal text-white/70">
+                                            </div>
+                                            <div className=" mt-1 text-sm font-normal text-white/70">
                                                 <div>{item.role}
                                                 </div>
-                                            </p>
+                                            </div>
                                         </div>
                                         <button
                                             className=" inline-flex items-center justify-center h-14 w-14 text-white bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl hover:bg-white/20 transition-all duration-200 pointer-events-auto">
