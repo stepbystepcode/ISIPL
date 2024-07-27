@@ -8,7 +8,48 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { supabase } from '@/lib/supabaseClient';
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface PasswordCheckResult {
+    isStrong: boolean;
+    message: string;
+}
 
+function isPasswordStrong(password: string): PasswordCheckResult {
+    if (password.length < 8) {
+        return {
+            isStrong: false,
+            message: '密码长度必须至少为8个字符。',
+        };
+    }
+    if (!/[A-Z]/.test(password)) {
+        return {
+            isStrong: false,
+            message: '密码必须包含至少一个大写字母。',
+        };
+    }
+    if (!/[a-z]/.test(password)) {
+        return {
+            isStrong: false,
+            message: '密码必须包含至少一个小写字母。',
+        };
+    }
+    if (!/[0-9]/.test(password)) {
+        return {
+            isStrong: false,
+            message: '密码必须包含至少一个数字。',
+        };
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        return {
+            isStrong: false,
+            message: '密码必须包含至少一个特殊字符。',
+        };
+    }
+
+    return {
+        isStrong: true,
+        message: '密码强度足够。',
+    };
+}
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     const [isLoading, setIsLoading] = React.useState<boolean>(false)
     const [email, setEmail] = React.useState<string>("")
@@ -28,17 +69,40 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             return
         }
         setIsLoading(true)
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        })
-        setTimeout(() => {
-            setIsLoading(false)
-            console.log(data, error)
-            if (error){
-                alert("用户名或密码错误");
+        if (isLogin) {
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password,
+            })
+            setTimeout(() => {
+                setIsLoading(false)
+                console.log(data, error)
+                if (error){
+                    alert("用户名或密码错误");
+                }
+            }, 3000)
+        }else{
+            const passwordCheckResult = isPasswordStrong(password);
+            if (!passwordCheckResult.isStrong) {
+                setTip(passwordCheckResult.message);
+                setIsLoading(false);
+                return;
             }
-        }, 3000)
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+                options: {
+                    emailRedirectTo: '/dashboard',
+                },
+            })
+            setTimeout(() => {
+                setIsLoading(false)
+                console.log(data, error)
+                if (error){
+                    alert("注册失败");
+                }
+            }, 3000)
+        }
     }
 
     return (
