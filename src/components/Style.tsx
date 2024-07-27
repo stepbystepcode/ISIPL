@@ -53,11 +53,11 @@ export const Style = () => {
                               >团队风采
                             </div>
                         </h2>
-                        <p className="DESC font-normal text-slate-700 dark:text-slate-400">
+                        <div className="DESC font-normal text-slate-700 dark:text-slate-400">
                             <div
                               >展示我们的团队活动，增强亲和力。
                             </div>
-                        </p>
+                        </div>
                     </div>
                 </motion.div>
                 <div className="grid grid-cols-2 gap-4 text-center md:grid-cols-3 lg:grid-cols-6">

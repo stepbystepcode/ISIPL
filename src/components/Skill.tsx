@@ -74,11 +74,11 @@ export const Skill = () => {
                                            >{skill.title}
                                         </div>
                                     </h3>
-                                    <p className="leading-relaxed text-base font-normal text-slate-700 dark:text-white/80">
+                                    <div className="leading-relaxed text-base font-normal text-slate-700 dark:text-white/80">
                                         <div className="_editable_jwu41_1 undefined"
                                            >{skill.desc}
                                         </div>
-                                    </p>
+                                    </div>
                                     <div className="flex mt-6 items-center"><span
                                         className="text-xs font-semibold inline-block py-1 px-2 text-sky-600 bg-sky-100 rounded-full dark:bg-sky-200"> <div
                                         className="_editable_jwu41_1 undefined"

@@ -9,6 +9,7 @@ import {Home} from './pages/Home.tsx'
 import {About} from "@/pages/About.tsx";
 import {Contact} from "@/pages/Contact.tsx";
 import {ErrorPage} from "@/pages/ErrorPage.tsx";
+import AuthenticationPage from "@/pages/Auth.tsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
     {
         path: "/contact",
         element: <Contact />,
+    },
+    {
+        path: "/login",
+        element: <AuthenticationPage />,
+    },
+    {
+        path: '/register',
+        element: <AuthenticationPage />,
     }
 ]);
 

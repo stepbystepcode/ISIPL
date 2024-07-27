@@ -59,7 +59,7 @@ export const AboutEvaluate = () => {
                         </div>
                         <div className="flex flex-wrap justify-center -m-1.5">
                             {personList.map((person, index) => (
-                                <button onClick={()=>setActiveIndex(index)} className={`inline-flex justify-center whitespace-nowrap rounded-full px-4 py-3 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ${activeIndex !==index?'bg-white dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-300 hover:bg-sky-100 text-slate-900':'bg-sky-500 shadow-sky-950/10 text-white' }`}>
+                                <button key={index} onClick={()=>setActiveIndex(index)} className={`inline-flex justify-center whitespace-nowrap rounded-full px-4 py-3 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ${activeIndex !==index?'bg-white dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-300 hover:bg-sky-100 text-slate-900':'bg-sky-500 shadow-sky-950/10 text-white' }`}>
                                     <div
                                     >{person.name}
                                     </div>

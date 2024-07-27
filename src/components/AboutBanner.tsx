@@ -53,11 +53,11 @@ export const AboutBanner = () => {
                                     >{feature.title}
                                     </div>
                                 </h3>
-                                <p className="mt-2 text-gray-300">
+                                <div className="mt-2 text-gray-300">
                                     <div
                                     >{feature.description}
                                     </div>
-                                </p>
+                                </div>
                             </div>
                         </div>
 

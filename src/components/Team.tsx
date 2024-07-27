@@ -58,11 +58,11 @@ export const Team = () => {
                         >我们的团队
                         </div>
                     </h2>
-                    <p className="DESC mt-6 text-lg leading-8 text-slate-700 dark:text-white/80">
+                    <div className="DESC mt-6 text-lg leading-8 text-slate-700 dark:text-white/80">
                         <div className="_editable_jwu41_1 undefined"
                         >我们是一支由教育专家、数据科学家和技术工程师组成的团队，致力于提升个性化教学效果。
                         </div>
-                    </p>
+                    </div>
                 </div>
                 <ul role="list"
                     className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -87,11 +87,11 @@ export const Team = () => {
                                     >{member.name}
                                     </div>
                                 </h3>
-                                <p className="TEXT-CONTENT text-base leading-7 text-slate-600 dark:text-white/80">
+                                <div className="TEXT-CONTENT text-base leading-7 text-slate-600 dark:text-white/80">
                                     <div className="_editable_jwu41_1 undefined"
                                     >{member.title}
                                     </div>
-                                </p>
+                                </div>
                                 <ul role="list" className="mt-6 flex gap-x-6">
                                     <li><span
                                         className="text-slate-400 hover:text-slate-500 dark:hover:text-white"><div
