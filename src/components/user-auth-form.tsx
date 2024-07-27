@@ -6,18 +6,38 @@ import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
+import { supabase } from '@/lib/supabaseClient';
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     const [isLoading, setIsLoading] = React.useState<boolean>(false)
+    const [email, setEmail] = React.useState<string>("")
+    const [password, setPassword] = React.useState<string>("")
+    const [confirm, setConfirm] = React.useState<string>("")
+    const [tip, setTip] = React.useState<string>("")
+    const isLogin = window.location.pathname === '/login'
 
     async function onSubmit(event: React.SyntheticEvent) {
         event.preventDefault()
+        if (!email || !password) {
+            setTip("请填写所有字段")
+            return
+        }
+        if (!isLogin && password !== confirm) {
+            setTip("密码不匹配")
+            return
+        }
         setIsLoading(true)
-
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        })
         setTimeout(() => {
             setIsLoading(false)
+            console.log(data, error)
+            if (error){
+                alert("用户名或密码错误");
+            }
         }, 3000)
     }
 
@@ -31,19 +51,45 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                         </Label>
                         <Input
                             id="email"
-                            placeholder="name@example.com"
+                            placeholder="电子邮件"
                             type="email"
                             autoCapitalize="none"
                             autoComplete="email"
                             autoCorrect="off"
                             disabled={isLoading}
+                            onChange={(event) => setEmail(event.target.value)}
                         />
+                        <Label className="sr-only" htmlFor="password">
+                            密码
+                        </Label>
+                        <Input
+                            id="password"
+                            placeholder="密码"
+                            type="password"
+                            disabled={isLoading}
+                            onChange={(event) => setPassword(event.target.value)}
+                        />
+                        {!isLogin &&
+                        <>
+                            <Label className="sr-only" htmlFor="confirm">
+                                确认密码
+                            </Label>
+                            <Input
+                                id="confirm"
+                                placeholder="确认密码"
+                                type="password"
+                                disabled={isLoading}
+                                onChange={(event) => setConfirm(event.target.value)}
+                            />
+                        </>
+                        }
                     </div>
+                    <div className="text-sm text-red-500">{tip}</div>
                     <Button disabled={isLoading}>
                         {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                         )}
-                        通过电子邮件登录
+                        {isLogin ? "登录" : "注册"}
                     </Button>
                 </div>
             </form>

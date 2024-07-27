@@ -3,7 +3,10 @@ import {faDiscord, faTiktok, faTwitter} from "@fortawesome/free-brands-svg-icons
 import Bg from './Bg';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from "react-router-dom";
 export const Banner = () => {
+
+    const navigate = useNavigate()
     return (
         <div className="relative mt-16 lg:mt-36">
             <motion.div className="max-w-7xl mx-auto"
@@ -34,7 +37,7 @@ export const Banner = () => {
                             <div className="w-full mt-6 flex flex-col gap-6 items-center md:flex-row">
                                 <button
                                     className="w-fit flex items-center gap-1 text-white whitespace-nowrap px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-600 group">
-                                    <span>立即注册</span>
+                                    <span onClick={()=>navigate('/register')}>立即注册</span>
                                     <div className="group-hover:translate-x-1 transition-all duration-300">
 
                                         <FontAwesomeIcon icon={faArrowRight} />

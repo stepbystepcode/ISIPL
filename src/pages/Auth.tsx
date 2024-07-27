@@ -1,20 +1,37 @@
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { UserAuthForm } from "@/components/user-auth-form"
-import {Link} from "react-router-dom";
-
+import {Link, useNavigate} from "react-router-dom";
+import {supabase} from "@/lib/supabaseClient.ts";
+import {useEffect, useState} from "react";
+import {Session} from "@supabase/supabase-js";
 export default function AuthenticationPage() {
+    const navigate = useNavigate()
+    const [session, setSession] = useState<Session | null>(null)
+    const isLogin = window.location.pathname === '/login'
+    console.log(session)
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session)
+            if(session) navigate("/dashboard")
+        })
+
+        supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session)
+            if(session) navigate("/dashboard")
+        })
+    }, [navigate])
     return (
         <>
             <div className="container grid h-[100vh] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
                 <Link
-                    to="/login"
+                    to={isLogin?'/register':'/login'}
                     className={cn(
                         buttonVariants({ variant: "ghost" }),
                         "absolute right-4 top-4 md:right-8 md:top-8"
                     )}
                 >
-                    登录
+                    {isLogin?'注册':'登录'}
                 </Link>
                 <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
                     <div className="absolute inset-0 bg-zinc-900" />
@@ -48,10 +65,10 @@ export default function AuthenticationPage() {
                     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
                         <div className="flex flex-col space-y-2 text-center">
                             <h1 className="text-2xl font-semibold tracking-tight">
-                                创建您的账户
+                                {!isLogin?'创建您的账户':'登录到您的账户'}
                             </h1>
                             <p className="text-sm text-muted-foreground">
-                                请输入您的电子邮件地址以继续
+                                请输入您的电子邮件地址和密码以继续
                             </p>
                         </div>
                         <UserAuthForm />

@@ -10,6 +10,7 @@ import {About} from "@/pages/About.tsx";
 import {Contact} from "@/pages/Contact.tsx";
 import {ErrorPage} from "@/pages/ErrorPage.tsx";
 import AuthenticationPage from "@/pages/Auth.tsx";
+import {Dashboard} from "@/pages/Dashboard.tsx";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     {
         path: '/register',
         element: <AuthenticationPage />,
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard />
     }
 ]);
 
