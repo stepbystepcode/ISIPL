@@ -149,7 +149,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                         }
                     </div>
                     <div className="text-sm text-red-500">{tip}</div>
-                    <Button disabled={isLoading}>
+                    <Button disabled={isLoading} className="bg-[#7047eb]">
                         {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                         )}

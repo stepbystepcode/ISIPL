@@ -1,14 +1,15 @@
 import {supabase} from "@/lib/supabaseClient.ts";
-import {useNavigate} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Session} from "@supabase/supabase-js";
+import {MainSidebar} from "@/components/MainSidebar.tsx";
+import {MainHeader} from "@/components/MainHeader.tsx";
 
 export const Dashboard = () => {
     const navigate = useNavigate()
     const [session, setSession] = useState<Session | null>(null)
-    console.log(session)
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
+        supabase.auth.getSession().then(({data: {session}}) => {
             setSession(session)
         })
 
@@ -21,11 +22,16 @@ export const Dashboard = () => {
         navigate("/login")
     }
     return (
-        <>
-        <div>Dashboard</div>
-        <div>{session?.user?.email}</div>
-
-        <button onClick={()=>logout()}>Logout</button>
-        </>
-    )
-}
+        <div className=" min-h-screen">
+           <MainHeader logout={logout()} email={session?.user?.email}/>
+        <div className="flex-1 mx-auto w-full max-w-1440 bg-white pt-16">
+            <div className="flex h-full">
+                <MainSidebar/>
+                <div className="ml-80 p-16 w-screen"><Outlet/></div>
+                </div>
+                {/*<div>{session?.user?.email}</div>*/}
+                {/*<button onClick={() => logout()}>Logout</button>*/}
+            </div>
+        </div>
+            )
+            }
