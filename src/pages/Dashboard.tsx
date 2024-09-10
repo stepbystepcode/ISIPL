@@ -23,15 +23,13 @@ export const Dashboard = () => {
     }
     return (
         <div className=" min-h-screen">
-           <MainHeader logout={logout()} email={session?.user?.email}/>
-        <div className="flex-1 mx-auto w-full max-w-1440 bg-white pt-16">
-            <div className="flex h-full">
-                <MainSidebar/>
-                <div className="ml-80 p-16 w-screen"><Outlet/></div>
+            <MainHeader logout={logout} email={session?.user?.email}/>
+            <div className="flex-1 mx-auto w-full max-w-1440 bg-white pt-16">
+                <div className="flex h-full">
+                    <MainSidebar/>
+                    <div className="ml-80 p-16 w-screen"><Outlet/></div>
                 </div>
-                {/*<div>{session?.user?.email}</div>*/}
-                {/*<button onClick={() => logout()}>Logout</button>*/}
             </div>
         </div>
-            )
-            }
+    )
+}

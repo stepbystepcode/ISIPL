@@ -26,7 +26,7 @@ export default function AuthenticationPage() {
             setSession(session)
             if (session) navigate("/dashboard")
         })
-    }, [navigate])
+    }, [navigate, session])
     return (
         <>
             <div
@@ -46,34 +46,6 @@ export default function AuthenticationPage() {
                 >
                     {isLogin ? '注册' : '登录'}
                 </Link>
-                {/*<div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">*/}
-                {/*    <div className="absolute inset-0 bg-zinc-900" />*/}
-                {/*    <div className="relative z-20 flex items-center text-lg font-medium cursor-pointer" onClick={()=>navigate('/')}>*/}
-                {/*        <svg*/}
-                {/*            xmlns="http://www.w3.org/2000/svg"*/}
-                {/*            viewBox="0 0 24 24"*/}
-                {/*            fill="none"*/}
-                {/*            stroke="currentColor"*/}
-                {/*            strokeWidth="2"*/}
-                {/*            strokeLinecap="round"*/}
-                {/*            strokeLinejoin="round"*/}
-                {/*            className="mr-2 h-6 w-6"*/}
-                {/*        >*/}
-                {/*            <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />*/}
-                {/*        </svg>*/}
-                {/*        FLAAFTS Inc*/}
-                {/*    </div>*/}
-                {/*    <div className="relative z-20 mt-auto">*/}
-                {/*        <blockquote className="space-y-2">*/}
-                {/*            <p className="text-lg">*/}
-                {/*                &ldquo;这个学习系统帮助我更好地了解我的学生，提供了一个更好的学习体验。&rdquo;*/}
-                {/*            </p>*/}
-                {/*            <footer className="text-sm">*/}
-                {/*                陈老师*/}
-                {/*            </footer>*/}
-                {/*        </blockquote>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
                 <div
                     className="relative hidden h-full flex-col bg-[#5423e7] p-10 dark:border-r lg:flex overflow-hidden">
                     <svg className="absolute top-0 left-0" width="720" height="787" viewBox="0 0 720 787" fill="none"

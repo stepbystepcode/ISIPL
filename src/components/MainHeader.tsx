@@ -6,9 +6,13 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import React from "react";
+interface MainHeaderProps {
+    logout: () => Promise<void>;
+    email: string | undefined;
+}
 
-
-export const MainHeader = ({logout, email}) => {
+export const MainHeader: React.FC<MainHeaderProps>  = ({logout, email}) => {
     const List = [
         {
             name: "首页",
@@ -43,7 +47,7 @@ export const MainHeader = ({logout, email}) => {
                 <DropdownMenu>
                     <DropdownMenuTrigger>
                         <div className="mr-4 flex gap-2">
-                            <span className="text-gray-500">abc1870819884@gmail.com</span>
+                            <span className="text-gray-500">{email}</span>
                             <ChevronDown/>
                         </div>
                         </DropdownMenuTrigger>
