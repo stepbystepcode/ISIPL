@@ -27,7 +27,7 @@ export const Dashboard = () => {
             <div className="flex-1 mx-auto w-full max-w-1440 bg-white pt-16">
                 <div className="flex h-full">
                     <MainSidebar/>
-                    <div className="ml-80 p-16 w-screen"><Outlet/></div>
+                    <div className="ml-80 p-8 w-screen"><Outlet/></div>
                 </div>
             </div>
         </div>

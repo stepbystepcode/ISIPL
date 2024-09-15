@@ -1,11 +1,13 @@
-import {
-    Card,
-    CardContent,
-} from "@/components/ui/card"
+import TodoCard from "@/components/Todo"
+import StudyCard from "@/components/StudyCard"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card"
 
-export const Profile = () => {
 
+export const ProfileCard = () => {
     return (
         <Card className="w-full max-w-md">
             <CardContent className="p-6">
@@ -27,6 +29,15 @@ export const Profile = () => {
                 </div>
             </CardContent>
         </Card>
+    )
+}
+export const Profile = () => {
 
+    return (
+        <div className="flex gap-4">
+            <ProfileCard />
+            <StudyCard />
+            <TodoCard />
+        </div>
     )
 }
