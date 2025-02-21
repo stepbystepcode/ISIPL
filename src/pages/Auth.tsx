@@ -76,7 +76,7 @@ export default function AuthenticationPage() {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-80 px-10 py-8 bg-white shadow-lg border-b-4 border-b-[#f75fde]">
                             <p className="text-16 min-h-32">
-                                &ldquo;这个学习系统帮助我更好地了解我的学生，提供了一个更好的学习体验。&rdquo;
+                                &ldquo;个性化学习评价与反馈系统（PLAFS）：让学习更懂你，量身定制的学习评价，实时精准的反馈支持，助你突破学习天花板，成就更优秀的自己。&rdquo;
                             </p>
 
                             <div className="relative flex items-center mt-3">

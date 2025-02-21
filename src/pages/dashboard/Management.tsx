@@ -1,7 +1,9 @@
+import { RadarCard } from "@/components/RadarCard"
+
 export const Management = () => {
     return (
-        <div>
-            Management
+        <div className="flex">
+            <RadarCard />
         </div>
     )
 }

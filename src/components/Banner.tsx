@@ -32,7 +32,7 @@ export const Banner = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col md:w-[640px] py-12 md:py-20 md:min-h-[480px]">
-                                <div className="text-5xl font-bold text-slate-50 mb-6">欢迎来到PLAAFTS</div>
+                                <div className="text-5xl font-bold text-slate-50 mb-6">欢迎来到PLAFS</div>
                                 <div className="text-white/60 mb-6">个性化学习评价与反馈系统，助力学生全面发展。</div>
                             <div className="w-full mt-6 flex flex-col gap-6 items-center md:flex-row">
                                 <button

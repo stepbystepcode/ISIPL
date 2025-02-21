@@ -2,7 +2,7 @@ import {motion} from "framer-motion"
 export const QA = () => {
     const qaList = [
         {
-            question: '如何注册PLAAFTS?',
+            question: 'PLAFS?',
             answer: '点击首页的“立即注册”按钮，填写相关信息即可完成注册。'
         },
         {
@@ -11,7 +11,7 @@ export const QA = () => {
         },
         {
             question: '是否支持移动设备?',
-            answer: 'PLAAFTS支持所有设备，您可以随时随地访问和使用。'
+            answer: 'PLAFS支持所有设备，您可以随时随地访问和使用。'
         }
     ];
     return (

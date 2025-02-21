@@ -47,7 +47,7 @@ export const Features = () => {
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                         <div className="text-4xl font-bold text-slate-900 dark:text-slate-50 md:text-5xl">
-                            PLAAFTS 主要功能
+                        PLAFS 主要功能
                         </div></div>
                     <div
                         className="max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:items-center space-y-8 md:space-y-0">

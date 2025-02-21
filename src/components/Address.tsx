@@ -4,19 +4,19 @@ import {faEnvelope, faLocationDot} from "@fortawesome/free-solid-svg-icons";
 export const Address = () => {
     const addressList = [
         {
-            title: 'PLAAFTS 北京办公室',
+            title: 'PLAFS 北京办公室',
             description: '联系我们的北京团队，了解更多信息。',
             location: '北京市朝阳区望京街道',
             email: 'beijing@edugeniustracker.com'
         },
         {
-            title: 'PLAAFTS 上海办公室',
+            title: 'PLAFS 上海办公室',
             description: '与我们的上海专家讨论您的需求。',
             location: '上海市浦东新区世纪大道',
             email: 'shanghai@edugeniustracker.com'
         },
         {
-            title: 'PLAAFTS 深圳办公室',
+            title: 'PLAFS 深圳办公室',
             description: '在深圳开启您的个性化教育之旅。',
             location: '深圳市南山区科技园',
             email: 'shenzhen@edugeniustracker.com'

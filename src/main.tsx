@@ -12,11 +12,12 @@ import {ErrorPage} from "@/pages/ErrorPage.tsx";
 import AuthenticationPage from "@/pages/Auth.tsx";
 import {Dashboard} from "@/pages/Dashboard.tsx";
 import {Profile} from "@/pages/dashboard/Profile.tsx";
-import {Assistant} from "@/pages/dashboard/Assistant.tsx";
+import {Schedule} from "@/pages/dashboard/Schedule.tsx";
 import {Analysis} from "@/pages/dashboard/Analysis.tsx";
 import {Evaluation} from "@/pages/dashboard/Evaluation.tsx";
 import {Management} from "@/pages/dashboard/Management.tsx";
 import {Settings} from "@/pages/dashboard/Settings.tsx";
+import {Feedback} from "@/pages/dashboard/Feedback.tsx";
 
 const router = createBrowserRouter([
     {
@@ -54,7 +55,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/assistant',
-                element: <Assistant />,
+                element: <Navigate to={'/dashboard/schedule'} replace />,
+            },
+            {
+                path: '/dashboard/schedule',
+                element: <Schedule />,
+            },
+            {
+                path: '/dashboard/feedback',
+                element: <Feedback />,
             },
             {
                 path: '/dashboard/analysis',

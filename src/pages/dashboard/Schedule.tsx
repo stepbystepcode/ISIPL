@@ -7,7 +7,7 @@ interface Course {
     name: string;
     color: string;
   }
-export const Assistant = () => {
+export const Schedule = () => {
     const [selectedCourse, setSelectedCourse] = useState<Course | null>(null)
 
     return (
