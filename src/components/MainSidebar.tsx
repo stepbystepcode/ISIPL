@@ -8,9 +8,21 @@ export const MainSidebar = () => {
         {name: "学习助手", icon: Bot, path: "assistant"},
         {name: "学情评价", icon: ChartPie, path: "evaluation"},
         {name: "知识掌握", icon: GraduationCap, path: "knowledge"},
+            {name: "知识理解", path: "comprehension"},
+            {name: "知识迁移", path: "transmission"},
+            {name: "知识应用", path: "application"},
         {name: "综合能力", icon: Codepen, path: "skills"},
+            {name: "团队协作", path: "collaboration"},
+            {name: "沟通能力", path: "communication"},
+            {name: "问题解决", path: "solution"},
         {name: "高阶思维", icon: Brain, path: "thinking"},
+            {name: "抽象思维", path: "abstraction"},
+            {name: "元认知思维", path: "understanding"},
+            {name: "批判思维", path: "criticism"},
+            {name: "反事实-假设思维", path: "hypothesis"},
         {name: "评价反馈", icon: FileBadge, path: "feedback"},
+            {name: "人机交互", path: "interaction"},
+            {name: "人机互动", path: "dialogue"},
         {name: "系统设置", icon: Settings, path: "settings"}
     ];
     return (
