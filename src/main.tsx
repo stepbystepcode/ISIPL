@@ -18,7 +18,10 @@ import {Evaluation} from "@/pages/dashboard/Evaluation.tsx";
 import {Management} from "@/pages/dashboard/Management.tsx";
 import {Settings} from "@/pages/dashboard/Settings.tsx";
 import {Feedback} from "@/pages/dashboard/Feedback.tsx";
-
+import {Abstraction} from "@/pages/dashboard/Abstraction.tsx";
+import {Understanding} from "@/pages/dashboard/Understanding.tsx";
+import {Criticism} from "@/pages/dashboard/Criticism.tsx";
+import {Hypothesis} from "@/pages/dashboard/Hypothesis.tsx";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -80,6 +83,22 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/settings',
                 element: <Settings />,
+            },
+            {
+                path: '/dashboard/understanding',
+                element: <Understanding />,
+            },
+            {
+                path: '/dashboard/abstraction',
+                element: <Abstraction />,
+            },
+            {
+                path: '/dashboard/criticism',
+                element: <Criticism />,
+            },
+            {
+                path: '/dashboard/hypothesis',
+                element: <Hypothesis />
             }
         ]
     }
