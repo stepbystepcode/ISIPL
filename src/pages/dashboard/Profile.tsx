@@ -34,7 +34,7 @@ export const ProfileCard = () => {
 export const Profile = () => {
 
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 p-8">
             <ProfileCard />
             <StudyCard />
             <TodoCard />

@@ -217,15 +217,15 @@ export const Interaction = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-80px)] w-full p-4">
-      <Card className="h-full">
+    <div className="flex h-[calc(100vh-4rem)] w-full p-4">
+      <Card className="flex flex-1">
         <CardHeader className="p-4">
           <CardTitle className="text-lg flex items-center gap-2">
             <Bot className="h-5 w-5" />
             人机交互 AI 助手
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0 h-[calc(100%-140px)]">
+        <CardContent className="p-0 flex-1">
           <ResizablePanelGroup
             direction="horizontal"
             className="h-full rounded-lg border"

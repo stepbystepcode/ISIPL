@@ -12,7 +12,9 @@ interface MainHeaderProps {
     email: string | undefined;
 }
 
+import { useNavigate } from "react-router-dom";
 export const MainHeader: React.FC<MainHeaderProps>  = ({logout, email}) => {
+    const navigate = useNavigate()
     const List = [
         {
             name: "首页",
@@ -29,8 +31,11 @@ export const MainHeader: React.FC<MainHeaderProps>  = ({logout, email}) => {
     ];
     return (
         <header className="h-16 flex fixed top-0 bg-white w-screen z-50">
-            <div className="w-80 flex justify-center items-center"
+            <div className="w-80 flex justify-center items-center cursor-pointer"
             style={{backgroundImage:"linear-gradient(90deg,#f5f5fa 80%,#ebebf0)"}}
+            onClick={() => {
+                navigate("/")
+            }}
             >LOGO</div>
             <nav className="border-b-[#eeeef5] border-b flex-grow flex pl-8 items-center justify-between">
                 <ul className="flex gap-6">
