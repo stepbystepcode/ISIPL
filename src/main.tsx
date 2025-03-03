@@ -26,6 +26,7 @@ import {Interaction} from "@/pages/dashboard/Interaction.tsx";
 import {Collaboration} from "@/pages/dashboard/Collaboration.tsx";
 import {Communication} from "@/pages/dashboard/Communication.tsx";
 import {Solution} from "@/pages/dashboard/Solution.tsx";
+import {Knowledge} from "@/pages/dashboard/Knowledge.tsx";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -119,6 +120,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/interaction',
                 element: <Interaction />
+            },
+            {
+                path: '/dashboard/knowledge',
+                element: <Knowledge />
             }
         ]
     }

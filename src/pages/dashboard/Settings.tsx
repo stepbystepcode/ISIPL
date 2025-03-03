@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { toast } from "sonner"
 
 
@@ -282,7 +282,7 @@ export const Settings = () => {
                   <Button type="submit" disabled={isUpdatingProfile}>
                     {isUpdatingProfile ? (
                       <>
-                        <LoadingSpinner size="sm" className="mr-2" />
+                        {/* <LoadingSpinner className="mr-2" /> */}
                         保存中...
                       </>
                     ) : (
@@ -353,7 +353,7 @@ export const Settings = () => {
                   <Button type="submit" disabled={isChangingPassword}>
                     {isChangingPassword ? (
                       <>
-                        <LoadingSpinner size="sm" className="mr-2" />
+                        {/* <LoadingSpinner className="mr-2" /> */}
                         更新中...
                       </>
                     ) : (

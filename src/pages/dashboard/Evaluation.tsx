@@ -1,5 +1,5 @@
 import * as React from "react"
-import { addDays, format } from "date-fns"
+import { format } from "date-fns"
 import { CalendarIcon, Download, Eye, FileText, TrendingUp } from "lucide-react"
 import { DateRange } from "react-day-picker"
  
@@ -45,10 +45,8 @@ import {
   PolarGrid,
   Radar,
   RadarChart,
-  ResponsiveContainer,
   XAxis,
   YAxis,
-  Tooltip,
 } from "recharts"
 
 // 学习维度数据
