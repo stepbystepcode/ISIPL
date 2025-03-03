@@ -22,7 +22,7 @@ export const MainSidebar = () => {
             {name: "反事实-假设思维", path: "hypothesis"},
         {name: "评价反馈", icon: FileBadge, path: "feedback"},
             {name: "人机交互", path: "interaction"},
-            {name: "人机互动", path: "dialogue"},
+            {name: "人际互动", path: "dialogue"},
         {name: "系统设置", icon: Settings, path: "settings"}
     ];
     return (
