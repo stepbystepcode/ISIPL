@@ -12,7 +12,7 @@ import {ErrorPage} from "@/pages/ErrorPage.tsx";
 import AuthenticationPage from "@/pages/Auth.tsx";
 import {Dashboard} from "@/pages/Dashboard.tsx";
 import {Profile} from "@/pages/dashboard/Profile.tsx";
-import {Schedule} from "@/pages/dashboard/Schedule.tsx";
+import {Assistant} from "@/pages/dashboard/Assistant.tsx";
 import {Analysis} from "@/pages/dashboard/Analysis.tsx";
 import {Evaluation} from "@/pages/dashboard/Evaluation.tsx";
 import {Management} from "@/pages/dashboard/Management.tsx";
@@ -22,6 +22,9 @@ import {Abstraction} from "@/pages/dashboard/Abstraction.tsx";
 import {Understanding} from "@/pages/dashboard/Understanding.tsx";
 import {Criticism} from "@/pages/dashboard/Criticism.tsx";
 import {Hypothesis} from "@/pages/dashboard/Hypothesis.tsx";
+import {Collaboration} from "@/pages/dashboard/Collaboration.tsx";
+import {Communication} from "@/pages/dashboard/Communication.tsx";
+import {Solution} from "@/pages/dashboard/Solution.tsx";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -58,11 +61,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/assistant',
-                element: <Navigate to={'/dashboard/schedule'} replace />,
-            },
-            {
-                path: '/dashboard/schedule',
-                element: <Schedule />,
+                element: <Assistant />,
             },
             {
                 path: '/dashboard/feedback',
@@ -99,6 +98,22 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/hypothesis',
                 element: <Hypothesis />
+            },
+            {
+                path: '/dashboard/evaluation',
+                element: <Evaluation />
+            },
+            {
+                path: '/dashboard/collaboration',
+                element: <Collaboration />
+            },
+            {
+                path: '/dashboard/communication',
+                element: <Communication />
+            },
+            {
+                path: '/dashboard/solution',
+                element: <Solution />
             }
         ]
     }
