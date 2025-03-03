@@ -22,6 +22,7 @@ import {Abstraction} from "@/pages/dashboard/Abstraction.tsx";
 import {Understanding} from "@/pages/dashboard/Understanding.tsx";
 import {Criticism} from "@/pages/dashboard/Criticism.tsx";
 import {Hypothesis} from "@/pages/dashboard/Hypothesis.tsx";
+import {Interaction} from "@/pages/dashboard/Interaction.tsx";
 import {Collaboration} from "@/pages/dashboard/Collaboration.tsx";
 import {Communication} from "@/pages/dashboard/Communication.tsx";
 import {Solution} from "@/pages/dashboard/Solution.tsx";
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/solution',
                 element: <Solution />
+            },
+            {
+                path: '/dashboard/interaction',
+                element: <Interaction />
             }
         ]
     }
